@@ -21,6 +21,32 @@ notAva={
   constructor() { }
   ngOnInit(): void {
 
+    let buyLaptop = new Promise((resolve, rejects) => {
+      if(this.dellIsAvaliable()){
+        return setTimeout(()=>{
+          resolve(this.DELL)
+        },300)
+      }else if(this.hpIsAvaliable()){
+           return setTimeout(()=>{
+             resolve(this.HP)
+           },300)
+      }else{
+        return setTimeout(()=>{
+          rejects(this.notAva);
+        },300)
+      }
+    })
+
+    buyLaptop.then(res=>{
+      console.log(res);
+    }).catch(res=>{
+      console.log(res);
+    })
+
+
+
+
+
     // aync  await
     let ayncawait=new Promise((resolve,rejects)=>{
       setTimeout(() => {
