@@ -6,17 +6,17 @@
     align-items: center;
 }
 ul{
+    width: 100%;
     list-style-type: none;   
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: hotpink;
 }
 li{
-   width: 200px 200px 200px 200px;
-   padding: 10%;
+   width: 100px 100px 100px 100px;
+   padding: 6%;
    margin: 10px;
    background-color: thistle;
 }

@@ -8,13 +8,16 @@ import { PromiseComponent } from './component/promise/promise.component';
 import {Routes,RouterModule} from '@angular/router';
 import { ObservableComponent } from './observablef/observable/observable.component';
 import { ListComponent } from './observablef/list/list.component';
-import { FormeventComponent } from './observablef/formevent/formevent.component'
+import { FormeventComponent } from './observablef/formevent/formevent.component';
+import { IntervalComponent } from './observablef/interval/interval.component';
+import { OfFormComponent } from './observablef/of-form/of-form.component'
 
 const appRoutes:Routes=[{path:'promise',component:PromiseComponent},
                          {path:'observable',component:ObservableComponent,children:[
                          {path:'',component:ListComponent},
-                         {path:'formEvent',component:FormeventComponent},]},
-                                  
+                         {path:'formEvent',component:FormeventComponent},
+                         {path:'interval',component:IntervalComponent},
+                         {path:'of-form',component:OfFormComponent}]},                                
 ]
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ const appRoutes:Routes=[{path:'promise',component:PromiseComponent},
     PromiseComponent,
     ObservableComponent,
     ListComponent,
-    FormeventComponent
+    FormeventComponent,
+    IntervalComponent,
+    OfFormComponent
+
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(appRoutes)

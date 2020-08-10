@@ -13,15 +13,20 @@ export class FormeventComponent implements OnInit, AfterViewInit {
   constructor() { }
   ngAfterViewInit(): void {
     fromEvent(this.btnAdd.nativeElement, 'click').subscribe(res => {
-      let video = 'video ' + this.count++;
-      let element = document.createElement('li');
-      element.innerText = video;
-      document.getElementById('eleContainer').appendChild(element);
-
+      let val = 'video ' + this.count++;
+      this.printElement(val,'eleContainer1');
+      this.printElement(val,'eleContainer2');
     })
   }
 
+  printElement(val,containerId){
+     console.log(containerId)
+     let el = document.createElement('li');
+     el.innerText=val;
+     let eli= document.getElementById(containerId).append(el);
+  }
   ngOnInit(): void {
+
   }
 
 
