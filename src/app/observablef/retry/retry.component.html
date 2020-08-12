@@ -1,0 +1,29 @@
+<div class="main">
+    <div class="row">
+        <div class="col-md-6">
+            
+            <table class="table" *ngIf="data!=null">
+                
+                    <th>Id</th>
+                    <th>name</th>
+
+                <tr *ngFor="let d of data">
+                    <td>{{d.id}}</td>
+                    <td>{{d.name}}</td>
+                </tr>
+            </table>
+            <button (click)="getData()" class="btn btn-primary" type="button">
+                <span *ngIf="featching" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                {{featching?'Featching':'Fetched Details'}}
+            </button>
+            <p>
+                status: <strong [ngClass]="{
+                    'text-success':status=='fetched data',
+                                            'text-danger':status=='problem in fetching data...'
+                                    }">{{status}}</strong>
+            </p>
+        </div>
+       
+    </div>
+    
+</div>

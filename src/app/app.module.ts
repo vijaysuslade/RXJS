@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './includes/header/header.component';
@@ -16,7 +17,9 @@ import { CustomComponent } from './observablef/custom/custom.component';
 import { MapOperatorComponent } from './map-operator/map-operator.component';
 import { PluckComponent } from './observablef/pluck/pluck.component';
 import { FilterComponent } from './observablef/filter/filter.component';
-import { TakeComponent } from './observablef/take/take.component'
+import { TakeComponent } from './observablef/take/take.component';
+import { RetryComponent } from './observablef/retry/retry.component'
+
 
 const appRoutes:Routes=[{path:'promise',component:PromiseComponent},
                          {path:'observable',component:ObservableComponent,children:[
@@ -29,7 +32,8 @@ const appRoutes:Routes=[{path:'promise',component:PromiseComponent},
                          {path:'Map',component:MapOperatorComponent},
                          {path:'pluck',component:PluckComponent},
                          {path:'filter',component:FilterComponent},
-                         {path:'take',component:TakeComponent}]},                                
+                         {path:'take',component:TakeComponent},
+                         {path:'retry',component:RetryComponent}]},                                
 ]
 @NgModule({
   declarations: [
@@ -46,11 +50,12 @@ const appRoutes:Routes=[{path:'promise',component:PromiseComponent},
     MapOperatorComponent,
     PluckComponent,
     FilterComponent,
-    TakeComponent
+    TakeComponent,
+    RetryComponent
 
   ],
   imports: [
-    BrowserModule,RouterModule.forRoot(appRoutes)
+    BrowserModule,RouterModule.forRoot(appRoutes),HttpClientModule
 
   ],
   providers: [],
