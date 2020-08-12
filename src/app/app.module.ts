@@ -18,7 +18,9 @@ import { MapOperatorComponent } from './map-operator/map-operator.component';
 import { PluckComponent } from './observablef/pluck/pluck.component';
 import { FilterComponent } from './observablef/filter/filter.component';
 import { TakeComponent } from './observablef/take/take.component';
-import { RetryComponent } from './observablef/retry/retry.component'
+import { RetryComponent } from './observablef/retry/retry.component';
+import { DbounceComponent } from './observablef/dbounce/dbounce.component';
+import { SubjectdemoComponent } from './observablef/subjectdemo/subjectdemo.component'
 
 
 const appRoutes:Routes=[{path:'promise',component:PromiseComponent},
@@ -33,7 +35,9 @@ const appRoutes:Routes=[{path:'promise',component:PromiseComponent},
                          {path:'pluck',component:PluckComponent},
                          {path:'filter',component:FilterComponent},
                          {path:'take',component:TakeComponent},
-                         {path:'retry',component:RetryComponent}]},                                
+                         {path:'retry',component:RetryComponent},
+                         {path:'debounce',component:DbounceComponent},
+                         {path:'subject',component:SubjectdemoComponent}]},                                
 ]
 @NgModule({
   declarations: [
@@ -51,7 +55,9 @@ const appRoutes:Routes=[{path:'promise',component:PromiseComponent},
     PluckComponent,
     FilterComponent,
     TakeComponent,
-    RetryComponent
+    RetryComponent,
+    DbounceComponent,
+    SubjectdemoComponent
 
   ],
   imports: [
