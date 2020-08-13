@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { interval, Subscription, from, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { interval, Subscription, from, Observable, of } from 'rxjs';
+import { map, mergeAll, mergeMap } from 'rxjs/operators';
+import { SequenceEqualSubscriber } from 'rxjs/internal/operators/sequenceEqual';
 
 @Component({
   selector: 'app-map-operator',
@@ -13,6 +14,10 @@ export class MapOperatorComponent implements OnInit {
    
   }
   subscription:Subscription;
+  getData(data){
+       return  of( data +'Video Uploaded');
+  }
+
   ngOnInit(): void {
 
     const map1=interval(10);
@@ -40,5 +45,22 @@ export class MapOperatorComponent implements OnInit {
       document.getElementById('LiId').appendChild(el)
     })
 
+
+     //margeAll and neregMap use to subscribe inside subscribe data
+    const source=from(['tech','comedy','News']);
+    
+    source.pipe(
+      //  map(res=>this.getData(res)),
+      //  mergeAll()
+      mergeMap(res=>this.getData(res)) //combo of map and mergeMap
+    ).subscribe(res=>{
+      let el=document.createElement('li');
+      el.innerText=res;
+      document.getElementById('mergeAll').appendChild(el)
+    })
+
 }
 }
+
+//  concatMap and concatAll -subscribe strem by SequenceEqualSubscriber
+// concatMap-combo of map+concatAll

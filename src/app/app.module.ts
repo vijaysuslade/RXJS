@@ -20,7 +20,8 @@ import { FilterComponent } from './observablef/filter/filter.component';
 import { TakeComponent } from './observablef/take/take.component';
 import { RetryComponent } from './observablef/retry/retry.component';
 import { DbounceComponent } from './observablef/dbounce/dbounce.component';
-import { SubjectdemoComponent } from './observablef/subjectdemo/subjectdemo.component'
+import { SubjectdemoComponent } from './observablef/subjectdemo/subjectdemo.component';
+import { ConcatemeargeComponent } from './observablef/concatemearge/concatemearge.component'
 
 
 const appRoutes:Routes=[{path:'promise',component:PromiseComponent},
@@ -37,7 +38,8 @@ const appRoutes:Routes=[{path:'promise',component:PromiseComponent},
                          {path:'take',component:TakeComponent},
                          {path:'retry',component:RetryComponent},
                          {path:'debounce',component:DbounceComponent},
-                         {path:'subject',component:SubjectdemoComponent}]},                                
+                         {path:'subject',component:SubjectdemoComponent},
+                         {path:'con-marge',component:ConcatemeargeComponent}]},                                
 ]
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ const appRoutes:Routes=[{path:'promise',component:PromiseComponent},
     TakeComponent,
     RetryComponent,
     DbounceComponent,
-    SubjectdemoComponent
+    SubjectdemoComponent,
+    ConcatemeargeComponent
 
   ],
   imports: [
